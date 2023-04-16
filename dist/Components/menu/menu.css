@@ -1,0 +1,147 @@
+
+#tabbar {
+  z-index: 1;
+  --background: #fff;
+  --color: #ffae00;
+  --shadow: #ffae00;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  height: 100vh;
+  background: #fff;
+  transform: translateY(0%);
+  box-shadow: 0 30px 120px 0 var(--shadow);
+  display: none;
+  flex-direction: column;
+  --background-scale-x: 1;
+  --background-scale-y: 1;
+  margin-top: 0;
+}
+#tabbar.pressed {
+  --background-opacity: 1;
+  --background-duration: .15s;
+  --background-delay: 0s;
+}
+#tabbar .background {
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  border-radius: 0 0 51px 51px;
+  
+  opacity: var(--background-opacity, 0);
+  transition: opacity var(--background-duration, 0.5s) linear var(--background-delay, 0.2s);
+}
+#tabbar .background:before, #tabbar .background:after {
+  content: "";
+  position: absolute;
+}
+#tabbar .background:after {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1vh;
+  border-radius: 31px 31px 0 0;
+  background: linear-gradient(var(--background), #fff 100%);
+  transform: scale(var(--background-scale-x), var(--background-scale-y)) translateZ(0);
+}
+#tabbar .background:before {
+  left: var(--dot-left, 50%);
+  bottom: 2vh;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  margin-left: -32px;
+  background: var(--background);
+  transform: translateY(var(--dot-y, 0)) scale(var(--dot-scale, 1)) translateZ(0);
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (-webkit-min-device-pixel-ratio: 0), all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  #tabbar .background {
+    filter: url(#goo);
+  }
+}
+#tabbar ul {
+  margin: auto 0 0 0;
+  padding: 0;
+  list-style: none;
+  width: 100vw;
+  height: 12vh;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  z-index: 1;
+  border-radius: 30px  30px 0px 0px;
+  background-color: rgb(255 255 255);
+  border-top-width: initial;
+  box-shadow: 0 11px 64px 0 #ffae0059;
+  border-top-style: ridge;
+  border-top-color: #ffae0066;
+}
+@media (max-width: 100vw) {
+  #tabbar ul {
+    width: 100vw;
+
+  }
+}
+#tabbar ul li {
+  --button-opacity: 1;
+  margin-top: 24px;
+}
+#tabbar ul li:not(:first-child) {
+  margin-left: 10%;
+}
+#tabbar ul li:not(:last-child) {
+  margin-right: 10%;
+}
+#tabbar ul li.active {
+  --icon-opacity: 0;
+  --icon-filled-opacity: 1;
+
+}
+#tabbar ul li button {
+  display: block;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: none;
+  position: relative;
+  opacity: var(--button-opacity);
+}
+#tabbar ul li button svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+  opacity: var(--opacity, var(--icon-opacity, 1));
+  transition: opacity 0.25s linear;
+}
+#tabbar ul li button svg:last-child {
+  --opacity: var(--icon-filled-opacity, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+#menu {
+  height: 12vh;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  display: block;
+  animation: animateMenu 0.3s ease-in-out forwards;
+}
+@keyframes animateMenu{
+  0%{
+      margin-bottom: -3rem;
+      opacity: 0;
+  }
+  100%{
+      margin-bottom: 0;
+      opacity: 1;
+  }
+}

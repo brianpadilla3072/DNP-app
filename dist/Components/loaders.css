@@ -1,0 +1,26 @@
+/************ SERVER NOT RESPOND ********************************/
+
+#clud-background{
+    fill:#ffae00c2;
+}
+.bg-orange{
+    
+    color: #ffae00;
+}
+.text-h1-bg{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+/************ PRE - LOADER ********************************/
+#preloader{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+#texto-loader{
+    margin-bottom: 1px;
+    position: fixed;
+    bottom: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #7c5501be;
+}

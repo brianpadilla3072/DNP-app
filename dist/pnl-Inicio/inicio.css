@@ -1,0 +1,78 @@
+#inicio{
+    overflow-y:scroll;
+    background-color: #fcfcfc;
+      bottom: 0;
+      right: 0;
+      height: 100vh;
+      width: 100vw;
+      transition: opacity var(--background-duration, 0.5s) linear var(--background-delay, 0.2s);
+      display: block;
+      margin-top: -20px;
+      
+  }
+  .portada{
+    background-color: #ffcf00d1;
+    width: 96vw;
+    height: 32vh;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin: 2%;
+   
+    }
+    .contenDate{
+        
+        height: 54vh;
+        width: 100vw;
+        border-radius: 15px;
+        margin: 2%;
+
+    }
+    .date{
+        width: 96%;
+        height: 15vh;
+        border-radius: 15px;
+        margin-bottom: 2%;
+        display: flex;
+        box-shadow: 0px 1px 3px black;
+
+    }
+    .dateNum{
+        background-color: #fed62d57;
+        height: 15vh;
+        width: 20%;
+        border-radius: 15px 0 0 15px ;
+        justify-content: center;
+        text-align: center;
+        display: inline-block;
+    }
+    .numero{
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 93%;
+        font-size: 6vh;
+    }
+    .mes{
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 100%;
+        font-size: 1;
+        font-family: fantasy;
+        padding: 1;
+    }
+
+    .dateInfo{
+        display: inline-block;
+        background-color: #fff;
+        height: 100%;
+        width: 80%;
+        border-radius: 0px 15px 15px 0px;
+    }
+    .dateTitle{
+        color: aliceblue;
+        background-color: antiquewhite;
+        font-size: x-small;
+    }
